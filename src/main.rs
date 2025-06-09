@@ -1,24 +1,3 @@
-//enum Term {
-//    Annotated(Box<Term>, Type),
-//    Variable(Name),
-//    Application(Box<Term>, Box<Term>),
-//    Lambda(String, Box<Term>),
-//}
-
-//fn eval(term: Term) -> Value {
-//    match term {
-//        Term::Annotated(term, _) => eval(*term),
-//        Term::Variable(variable) => Value::Neutral(Neutral::Variable(variable)),
-//        Term::Application(f, p) => match eval(*f) {
-//            Value::Neutral(f) => {
-//                Value::Neutral(Neutral::Application(Box::new(f), Box::new(eval(*p))))
-//            }
-//            v @ Value::Lambda(..) => v,
-//        },
-//        Term::Lambda(param, body) => Value::Lambda(param, Box::new(eval(*body))),
-//    }
-//}
-
 use std::collections::HashMap;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
