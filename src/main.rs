@@ -1,5 +1,7 @@
 use std::collections::HashMap;
 
+mod pretty;
+
 #[derive(Debug, Clone, PartialEq, Eq)]
 enum InferrableTerm {
     Annotated(CheckableTerm, Type),
@@ -413,6 +415,9 @@ mod tests {
         .into_iter()
         .collect::<HashMap<_, _>>();
 
-        assert_eq!(term2.ty(0, env2).unwrap(), Type::Function(tfree("b"), tfree("b")));
+        assert_eq!(
+            term2.ty(0, env2).unwrap(),
+            Type::Function(tfree("b"), tfree("b"))
+        );
     }
 }
